@@ -40,7 +40,7 @@ verifier:
 scenario:
   name: default
   test_sequence:
-    #- syntax
-    #- prepare
-    #- lint
+    - syntax
+    - prepare
+    - lint
     - verify
