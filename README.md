@@ -2,6 +2,13 @@
 
 **Automated testing Ansible roles with Docker and Molecule**
 
+Source code of molecule is inside molecule folder. 
+Empty folder roles is not commited to this repository. 
+
+It will be created with nginx example role which it will start clone to your folder when you run: 
+
+```molecule dependency```
+
 ---
 
 ## Requirements
@@ -12,6 +19,7 @@
 4. Install ***Ansible***
 5. Clone this repository and go in to this cloned folder
 
+- libselinux-python (CentOS/RedHat)
 ---
 
 ## Example
