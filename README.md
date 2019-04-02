@@ -39,7 +39,7 @@ This repository just filling out the space between Molecule, Ansible, Gilt and D
 
 ## Donation
 
-You know, it takes some effort and time to prepare it and We are going to add more features for extend automation with  Molecule.
+You know, it takes some effort and time to prepare it and we are going to add more features for extend automation with  Molecule.
 We will appreciate all donates which we will receive it.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/cleveritcz)
