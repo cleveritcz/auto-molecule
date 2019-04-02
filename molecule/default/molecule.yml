@@ -7,13 +7,29 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: "cleveritcz/${MOLECULE_DISTRO:-centos7}:testing"
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
-    volumes:
+    - name: centos7
+      image: "cleveritcz/${MOLECULE_DISTRO:-centos7}:testing"
+      command: ${MOLECULE_DOCKER_COMMAND:-""}
+      volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
+      privileged: true
+      pre_build_image: true
+
+    - name: debian8
+      image: "cleveritcz/debian8:testing"
+      command: ${MOLECULE_DOCKER_COMMAND:-""}
+      volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      privileged: true
+      pre_build_image: true
+
+    - name: debian9
+      image: "cleveritcz/debian9:testing"
+      command: ${MOLECULE_DOCKER_COMMAND:-""}
+      volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      privileged: true
+      pre_build_image: true
 provisioner:
   name: ansible
   options:
