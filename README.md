@@ -57,4 +57,4 @@ We will appreciate all donates which we will receive it.
 ## Usage of donations
 
  - Extend auto-molecule features
- - Prepare new tools with clever behaviour 
+ - Enjoy new tools with clever behaviour 
