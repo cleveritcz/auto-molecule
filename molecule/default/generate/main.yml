@@ -1,0 +1,8 @@
+---
+- include_tasks: find.yml
+
+- name: Include test roles for testing
+  include_role:
+    name: '{{ item }}'
+  loop: "{{ result.results|map(attribute='ansible_facts.role')|list }}"
+  no_log: true

@@ -1,0 +1,24 @@
+---
+- name: Find all roles
+  shell: set -o pipefail ; find ../../roles -maxdepth 0 \
+         -type d -exec ls -l {} \; 2> /dev/null|egrep -v \
+         "default|*.md|*.yml|*.yaml"|sort|awk '{print $9}' \
+         || find roles -maxdepth 0 -type d -exec ls -l {} \; \
+         2> /dev/null|egrep -v "default \
+         |*.md|*.yml|*.yaml"|sort|awk '{print $9}'
+  args:
+    chdir: "{{ playbook_dir }}"
+    executable: /bin/bash
+  changed_when: false
+  delegate_to: localhost
+  register: roles
+  no_log: true
+
+- name: Prepare list of roles
+  set_fact:
+    role: '{{ item }}'
+  with_items:
+    - '{{ roles.stdout_lines }}'
+  delegate_to: localhost
+  register: result
+  no_log: true

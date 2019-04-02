@@ -1,0 +1,46 @@
+---
+dependency:
+  name: shell
+  command: gilt --config gilt.yml overlay
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: "cleveritcz/${MOLECULE_DISTRO:-centos7}:testing"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+  options:
+    vv: true
+  playbooks:
+    converge: ../../install.yml
+    prepare: prepare.yml
+    cleanup: cleanup.yml
+  lint:
+    name: ansible-lint
+    options:
+      x: ANSIBLE0013
+verifier:
+  name: testinfra
+  directory: ../../tests
+  options:
+    verbose: true
+    sudo: false
+  lint:
+    name: flake8
+    enabled: false
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-install.yml}
+scenario:
+  name: default
+  test_sequence:
+    #- syntax
+    #- prepare
+    #- lint
+    - verify

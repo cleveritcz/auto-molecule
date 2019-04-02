@@ -1,0 +1,5 @@
+---
+# - git: ${MOLECULE_GIT}
+- git: https://github.com/cleveritcz/example.role.git
+  version: master
+  dst: roles/

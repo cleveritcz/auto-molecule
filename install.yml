@@ -1,0 +1,8 @@
+---
+- hosts: '{{ target|d("all") }}'
+  gather_facts: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python"
+
+  tasks:
+    - include_tasks: molecule/default/generate/main.yml

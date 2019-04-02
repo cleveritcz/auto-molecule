@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  ignore_errors: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python"
+
+  tasks:
+    - include_tasks: generate/find.yml
+
+    - name: Remove test role(s)
+      file:
+        path: "{{ playbook_dir }}/../../roles/{{ item }}"
+        state: absent
+      loop: "{{ result.results|map(attribute='ansible_facts.role')|list }}"
+      delegate_to: localhost
+      no_log: true
+
+    - name: Remove test role(s)
+      file:
+        path: "{{ playbook_dir }}/../../roles/README.md"
+        state: absent
+      delegate_to: localhost
+      no_log: true

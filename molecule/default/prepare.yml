@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  ignore_errors: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python"
+
+  tasks:
+    - name: Finding all *.yml, *.yaml files
+      find:
+        paths: ../../
+        recurse: true
+        patterns: '*.yml, *.yaml'
+      register: molecule_yml
+      no_log: true
+
+    - name: Fixing trailing spaces
+      replace:
+        path: "{{ item }}"
+        regexp: " *$"
+        replace: ""
+      with_items:
+        - "{{ molecule_yml.files|map(attribute='path')|list }}"
+      no_log: true
