@@ -39,9 +39,8 @@ This repository just filling out the space between Molecule, Ansible, Gilt and D
 
 ## Donation
 
-Because it takes some effort and time to prepare and add more features for Molecule we will appreciate all donates which we will receive it.
-
-If every reader donated ***5$***, the developers would only have to invest their free time to extend auto-molecul and prepare  more DevSecOps tools.
+You know, it takes some effort and time to prepare it and We are going to add more features for extend automation with  Molecule.
+We will appreciate all donates which we will receive it.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/cleveritcz)
 
