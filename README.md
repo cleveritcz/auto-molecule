@@ -19,7 +19,7 @@ v1.00
 
 Empty folder ****roles**** is not commited to this repository. 
 
-It will be created with nginx example role which it will start clone to your folder when you run: 
+It will be created with nginx and tomcat example roles which will be downloaded by Gilt when you will run: 
 
 ```molecule dependency```
 
