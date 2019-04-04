@@ -5,6 +5,9 @@
 
 ## Release log:
 
+v1.0.3
+- minor fixes
+
 v1.0.2
 - added group_vars for put variables out of the roles
 - added possibility to choose what kind of distro will be run for tests  in ***group_vars*** (Debian 8, Debian 9, CentOS 7)
