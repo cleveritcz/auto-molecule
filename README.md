@@ -4,7 +4,6 @@
 
 
 ## Release log:
----
 
 v1.0.2
 - added group_vars for put variables out of the roles
