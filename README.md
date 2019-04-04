@@ -6,6 +6,11 @@
 ## Release log:
 ---
 
+v1.0.2
+- added group_vars for put variables out of the roles
+- added possibility to choose what kind of distro will be run (Debian 8, Debian 9, CentOS 7) for test 
+- replaced Gilt with ansible git module for better manage of git repositories
+
 v1.01
 - added auto integration tests (Debian 8, Debian 9, CentOS 7)
 
@@ -28,7 +33,6 @@ It will be created with nginx and tomcat example roles which will be downloaded 
 ## Requirements
 
 1. Install ***Molecule***
-2. Install ***Gilt*** - only if you would like to use git overlays or example role...
 3. Install ***Docker***
 4. Install ***Ansible***
 5. Clone this repository and go in to this cloned folder
@@ -42,14 +46,19 @@ We prepared example role for test functionality of automated testing ansible rol
 
 Just make these three steps and you will find all features which I added to molecule:
 
-
-1. Run **molecule converge** (Default distro: CentOS 7) or 
-   **MOLECULE_DISTRO=debian9 molecule converge** - run Ansible role on Debian 9
-   - Clone git repository to folder roles/ and find all Ansible roles in folder ***roles***, run them in Docker containers
-2. Run **molecule test**
-   - Validate syntax, lint, fix trailing spaces and make tests  
+1. Choose from group_vars/all/main.yml distributions for testing
+2. Replace git repositories for yours or just leave it as it is for example in git.yml
+3. Run **molecule dependency** - it will prepare the environment for test
+4. Run **molecule test**
+   - Validate syntax, lint, fix trailing spaces and make tests
+   - It will destroy instance without destroy roles in folder ***roles***
+   or/and
+   
+5. Run **molecule converge** (Default distro: CentOS 7)
+   - start test Ansible roles in docker containers   
+  
 3. Run **molecule destroy**
-   - Destroy Docker container and remove all roles from created folder ***roles***
+   - Destroy Docker containers and remove all roles from created folder ***roles*** by git.yml
 
 ---
 
