@@ -62,7 +62,7 @@ Just make these six steps and you will find all features which I added to molecu
 
 ## Description
 
-This repository just filling out the space between Molecule, Ansible, Gilt and Docker.
+This repository just filling out the spaces of Molecule.
 
 ---
 
