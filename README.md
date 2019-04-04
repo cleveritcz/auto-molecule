@@ -1,11 +1,25 @@
 # Auto-molecule
 
-**Automated testing Ansible roles with Docker and Molecule**
+**Automate tests Ansible roles with Docker and Molecule**
 
-Source code of molecule is inside molecule folder. 
-Empty folder roles is not commited to this repository. 
 
-It will be created with nginx example role which it will start clone to your folder when you run: 
+## Release log:
+---
+
+v1.01
+- added auto integration tests (Debian 8, Debian 9, CentOS 7)
+
+v1.00
+- auto find all Ansible roles for tests if roles are in folder roles
+- auto find and auto fix trailing spaces in yml files for tests
+- split molecule and developer code (clean environment for development)
+- auto deploy multiple Ansible roles in one container
+
+---
+
+Empty folder ****roles**** is not commited to this repository. 
+
+It will be created with nginx and tomcat example roles which will be downloaded by Gilt when you will run: 
 
 ```molecule dependency```
 
