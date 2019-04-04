@@ -49,7 +49,7 @@ Just make these three steps and you will find all features which I added to mole
 1. Choose from group_vars/all/main.yml distributions for testing
 2. Replace git repositories for yours or just leave it as it is for example in git.yml
 3. Run **molecule dependency** - it will prepare the environment for test
-   - must be run every time when you will change distributions for run
+   - must be run every time when you will change distributions to run
 4. Run **molecule test**
    - Validate syntax, lint, fix trailing spaces and make tests
    - It will destroy instance without destroy roles in folder ***roles***
