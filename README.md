@@ -8,7 +8,7 @@
 
 v1.0.2
 - added group_vars for put variables out of the roles
-- added possibility to choose what kind of distro will be run for test (Debian 8, Debian 9, CentOS 7) 
+- added possibility to choose what kind of distro will be run in group_vars for tests (Debian 8, Debian 9, CentOS 7) 
 - replaced Gilt with ansible git module for better manage of git repositories
 
 v1.01
