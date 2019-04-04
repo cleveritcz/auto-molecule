@@ -1,14 +1,16 @@
 ---
 - hosts: localhost
+  connection: local
   gather_facts: false
   vars:
     ansible_python_interpreter: "/usr/bin/env python"
 
   tasks:
-    - name: Pull git repositories
-      include_tasks: git.yml
-
     - name: Prepare develop environment
       template:
         src: molecule/default/molecule.yml.j2
         dest: molecule/default/molecule.yml
+      no_log: true
+
+    - name: Pull git repositories
+      include_tasks: git.yml

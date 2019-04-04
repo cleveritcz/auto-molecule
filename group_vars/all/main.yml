@@ -1,5 +1,5 @@
 ---
 
-centos7: true
-debian8: false
-debian9: true
+auto-molecule_centos7: true
+auto-molecule_debian8: false
+auto-molecule_debian9: true
