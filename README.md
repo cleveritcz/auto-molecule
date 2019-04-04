@@ -42,9 +42,9 @@ It will be pulled from github with nginx and tomcat example roles by Ansible whe
 
 ## Example
 
-We prepared example role for test functionality of automated testing ansible roles.
+We prepared example roles for test functionality of automated testing ansible roles.
 
-Just make these three steps and you will find all features which I added to molecule:
+Just make these six steps and you will find all features which I added to molecule:
 
 1. Choose from group_vars/all/main.yml distributions for testing
 2. Replace git repositories for yours or just leave it as it is for example in git.yml
