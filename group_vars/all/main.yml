@@ -2,4 +2,4 @@
 
 centos7: true
 debian8: false
-debian9: false
+debian9: true
