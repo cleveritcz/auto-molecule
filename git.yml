@@ -1,14 +1,12 @@
 ---
-- name: Download example.nginx repository
-  git:
+- git:
     repo: 'https://github.com/cleveritcz/example.nginx.git'
     dest: roles/
     clone: true
     update: false
     version: master
 
-- name: Download example.tomcat repository
-  git:
+- git:
     repo: 'https://github.com/cleveritcz/example.tomcat.git'
     dest: roles/
     clone: true
