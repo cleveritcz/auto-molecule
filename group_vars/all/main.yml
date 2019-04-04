@@ -1,0 +1,7 @@
+---
+
+### Docker containers
+
+centos7: true
+debian8: false
+debian9: false

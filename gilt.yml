@@ -1,7 +1,0 @@
----
-- git: https://github.com/cleveritcz/example.nginx.git
-  version: master
-  dst: roles/
-- git: https://github.com/cleveritcz/example.tomcat.git
-  version: master
-  dst: roles/
