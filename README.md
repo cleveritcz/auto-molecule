@@ -1,6 +1,6 @@
 # Auto-molecule
 
-**Automate tests Ansible roles with Docker and Molecule**
+**Automate tests of Ansible roles with Docker and Molecule**
   - Put your Ansible development to next level
 
 ## Release log:
