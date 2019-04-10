@@ -5,6 +5,9 @@
 
 ## Release log:
 
+v1.0.4
+- added ubuntu 16.04, 18.04 support
+
 v1.0.3
 - minor fixes
 
