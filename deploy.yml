@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  gather_facts: false
+  gather_facts: true
   vars:
     ansible_python_interpreter: "/usr/bin/env python"
 
@@ -10,7 +10,7 @@
       template:
         src: molecule/default/molecule.yml.j2
         dest: molecule/default/molecule.yml
-      no_log: true
+        no_log: true
 
     - name: Pull git repositories
       include_tasks: git.yml

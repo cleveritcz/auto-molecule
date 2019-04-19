@@ -7,7 +7,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-{% if auto-molecule_centos7 == true %}
+{% if auto_molecule_centos7 == true %}
   - name: centos7
     image: "cleveritcz/${MOLECULE_DISTRO:-centos7}:testing"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
@@ -16,25 +16,7 @@ platforms:
     privileged: true
     pre_build_image: true
 {% endif %}
-{% if auto-molecule_ubuntu16.04 == true %}
-  - name: ubuntu16.04
-    image: "cleveritcz/ubuntu16.04"
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
-{% endif %}
-{% if auto-molecule_ubuntu18.04 == true %}
-  - name: ubuntu18.04
-    image: "cleveritcz/ubuntu18.04"
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
-    pre_build_image: true
-{% endif %}
-{% if auto-molecule_debian8 == true %}
+{% if auto_molecule_debian8 == true %}
   - name: debian8
     image: "cleveritcz/debian8:testing"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
@@ -43,9 +25,27 @@ platforms:
     privileged: true
     pre_build_image: true
 {% endif %}
-{% if auto-molecule_debian9 == true %}
+{% if auto_molecule_debian9 == true %}
   - name: debian9
     image: "cleveritcz/debian9:testing"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+{% endif %}
+{% if auto_molecule_ubuntu1604 == true %}
+  - name: ubuntu16.04
+    image: "cleveritcz/ubuntu16.04"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+{% endif %}
+{% if auto_molecule_ubuntu1804 == true %}
+  - name: ubuntu18.04
+    image: "cleveritcz/ubuntu18.04"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
@@ -84,3 +84,4 @@ scenario:
     - prepare
     - lint
     - verify
+

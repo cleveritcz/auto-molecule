@@ -1,6 +1,6 @@
 ---
-auto-molecule_centos7: true
-auto-molecule_debian8: false
-auto-molecule_debian9: true
-auto-molecule_ubuntu16.04: false
-auto-molecule_ubuntu18.04: false
+auto_molecule_centos7: true
+auto_molecule_debian8: false
+auto_molecule_debian9: true
+auto_molecule_ubuntu1604: false
+auto_molecule_ubuntu1804: false
